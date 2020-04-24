@@ -1,0 +1,23 @@
+.hero {
+  width:33%;
+  display:block;
+  float:left;
+}
+
+.hero-card{
+  max-width:125px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.hero-card:hover .hero-portrait{
+  width:100%;
+  height:100%;
+}
+
+.hero-portrait, .hero-portrait img{
+  margin: 0 auto;
+  width:90%;
+  height:90%;
+  transition:.3s;
+}
