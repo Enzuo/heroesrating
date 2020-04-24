@@ -1,0 +1,91 @@
+
+[
+  { "name": "Abathur"               , "type": "Support"          , "universe": "StarCraft"         }
+ ,{ "name": "Arthas"                , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Diablo"                , "type": "Tank"             , "universe": "Diablo"            }
+ ,{ "name": "E.T.C."                , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Falstad"               , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Gazlowe"               , "type": "Melee Assassin"   , "universe": "Warcraft"          }
+ ,{ "name": "Illidan"               , "type": "Melee Assassin"   , "universe": "Warcraft"          }
+ ,{ "name": "Kerrigan"              , "type": "Melee Assassin"   , "universe": "StarCraft"         }
+ ,{ "name": "Malfurion"             , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Muradin"               , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Nazeebo"               , "type": "Ranged Assassin"  , "universe": "Diablo"            }
+ ,{ "name": "Nova"                  , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Raynor"                , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Sgt. Hammer"           , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Sonya"                 , "type": "Bruiser"          , "universe": "Diablo"            }
+ ,{ "name": "Stitches"              , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Tassadar"              , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Tyrael"                , "type": "Tank"             , "universe": "Diablo"            }
+ ,{ "name": "Tyrande"               , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Uther"                 , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Valla"                 , "type": "Ranged Assassin"  , "universe": "Diablo"            }
+ ,{ "name": "Zeratul"               , "type": "Melee Assassin"   , "universe": "StarCraft"         }
+ ,{ "name": "Tychus"                , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Brightwing"            , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Li Li"                 , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Murky"                 , "type": "Melee Assassin"   , "universe": "Warcraft"          }
+ ,{ "name": "Zagara"                , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Rehgar"                , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Chen"                  , "type": "Bruiser"          , "universe": "Warcraft"          }
+ ,{ "name": "Anub'arak"             , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Azmodan"               , "type": "Ranged Assassin"  , "universe": "Diablo"            }
+ ,{ "name": "Jaina"                 , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Thrall"                , "type": "Bruiser"          , "universe": "Warcraft"          }
+ ,{ "name": "The Lost Vikings"      , "type": "Support"          , "universe": "The Lost Vikings"  }
+ ,{ "name": "Sylvanas"              , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Kael'thas"             , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Johanna"               , "type": "Tank"             , "universe": "Diablo"            }
+ ,{ "name": "The Butcher"           , "type": "Melee Assassin"   , "universe": "Diablo"            }
+ ,{ "name": "Leoric"                , "type": "Bruiser"          , "universe": "Diablo"            }
+ ,{ "name": "Kharazim"              , "type": "Healer"           , "universe": "Diablo"            }
+ ,{ "name": "Rexxar"                , "type": "Bruiser"          , "universe": "Warcraft"          }
+ ,{ "name": "Lt. Morales"           , "type": "Healer"           , "universe": "StarCraft"         }
+ ,{ "name": "Artanis"               , "type": "Bruiser"          , "universe": "StarCraft"         }
+ ,{ "name": "Cho"                   , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Gall"                  , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Lunara"                , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Greymane"              , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Li-Ming"               , "type": "Ranged Assassin"  , "universe": "Diablo"            }
+ ,{ "name": "Xul"                   , "type": "Bruiser"          , "universe": "Diablo"            }
+ ,{ "name": "Dehaka"                , "type": "Bruiser"          , "universe": "StarCraft"         }
+ ,{ "name": "Tracer"                , "type": "Ranged Assassin"  , "universe": "Overwatch"         }
+ ,{ "name": "Chromie"               , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Medivh"                , "type": "Support"          , "universe": "Warcraft"          }
+ ,{ "name": "Gul'dan"               , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Auriel"                , "type": "Healer"           , "universe": "Diablo"            }
+ ,{ "name": "Alarak"                , "type": "Melee Assassin"   , "universe": "StarCraft"         }
+ ,{ "name": "Zarya"                 , "type": "Support"          , "universe": "Overwatch"         }
+ ,{ "name": "Samuro"                , "type": "Melee Assassin"   , "universe": "Warcraft"          }
+ ,{ "name": "Varian"                , "type": "Bruiser"          , "universe": "Warcraft"          }
+ ,{ "name": "Ragnaros"              , "type": "Bruiser"          , "universe": "Warcraft"          }
+ ,{ "name": "Zul'jin"               , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Valeera"               , "type": "Melee Assassin"   , "universe": "Warcraft"          }
+ ,{ "name": "Lúcio"                 , "type": "Healer"           , "universe": "Overwatch"         }
+ ,{ "name": "Probius"               , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Cassia"                , "type": "Ranged Assassin"  , "universe": "Diablo"            }
+ ,{ "name": "Genji"                 , "type": "Ranged Assassin"  , "universe": "Overwatch"         }
+ ,{ "name": "D.Va"                  , "type": "Bruiser"          , "universe": "Overwatch"         }
+ ,{ "name": "Malthael"              , "type": "Bruiser"          , "universe": "Diablo"            }
+ ,{ "name": "Stukov"                , "type": "Healer"           , "universe": "StarCraft"         }
+ ,{ "name": "Garrosh"               , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Kel'Thuzad"            , "type": "Ranged Assassin"  , "universe": "Warcraft"          }
+ ,{ "name": "Ana"                   , "type": "Healer"           , "universe": "Overwatch"         }
+ ,{ "name": "Junkrat"               , "type": "Ranged Assassin"  , "universe": "Overwatch"         }
+ ,{ "name": "Alexstrasza"           , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Hanzo"                 , "type": "Ranged Assassin"  , "universe": "Overwatch"         }
+ ,{ "name": "Blaze"                 , "type": "Tank"             , "universe": "StarCraft"         }
+ ,{ "name": "Maiev"                 , "type": "Melee Assassin"   , "universe": "Warcraft"          }
+ ,{ "name": "Fenix"                 , "type": "Ranged Assassin"  , "universe": "StarCraft"         }
+ ,{ "name": "Deckard"               , "type": "Healer"           , "universe": "Diablo"            }
+ ,{ "name": "Yrel"                  , "type": "Bruiser"          , "universe": "Warcraft"          }
+ ,{ "name": "Whitemane"             , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Mephisto"              , "type": "Ranged Assassin"  , "universe": "Diablo"            }
+ ,{ "name": "Mal'Ganis"             , "type": "Tank"             , "universe": "Warcraft"          }
+ ,{ "name": "Orphea"                , "type": "Ranged Assassin"  , "universe": "Heroes"            }
+ ,{ "name": "Imperius"              , "type": "Bruiser"          , "universe": "Diablo"            }
+ ,{ "name": "Anduin"                , "type": "Healer"           , "universe": "Warcraft"          }
+ ,{ "name": "Qhira"                 , "type": "Melee Assassin"   , "universe": "Heroes"            }
+ ,{ "name": "Deathwing"             , "type": "Bruiser"          , "universe": "Warcraft"          }
+]
