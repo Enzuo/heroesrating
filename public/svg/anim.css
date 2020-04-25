@@ -1,0 +1,7 @@
+/* svg anim */
+
+#star_1 {
+  fill: red;
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+}
