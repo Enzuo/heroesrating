@@ -2,6 +2,6 @@
 
 #star_1 {
   fill: red;
-  transform: rotate(180deg);
-  transform-origin: 50% 50%;
+  transform: rotate(90deg);
+  transform-origin: 22px 7px;
 }
