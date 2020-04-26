@@ -1,18 +1,20 @@
 /* svg anim */
 
 #star_1 {
-  animation:pop_stars 3s ease-out;
-  /* animation:rotate_stars 1s linear infinite; */
+  animation:rotate_stars 1s linear infinite,
+            pop_stars 0.2s ease-out;
   transform-origin: 22px 7px;
 }
 
 #star_2 {
-  animation:rotate_stars .7s linear infinite;
+  animation:rotate_stars .7s linear infinite,
+            pop_stars_delay 0.3s ease-out;
   transform-origin: 9.15px 9.75px;
 }
 
 #star_3 {
-  animation:rotate_stars .7s linear infinite;
+  animation:rotate_stars .7s linear infinite,
+            pop_stars_delay 0.3s ease-out;
   transform-origin: 34px 10.5px;
 }
 
@@ -33,6 +35,18 @@
     transform: scale(0);
   }
   to {
+    transform: scale(100%);
+  }
+}
+
+@keyframes pop_stars_delay {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
     transform: scale(100%);
   }
 }

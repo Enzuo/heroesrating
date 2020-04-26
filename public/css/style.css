@@ -30,6 +30,7 @@ body {
 .hero-portrait {
   width:100%;
   max-height:125px;
+  position:relative;
 }
 
 .hero-portrait img{
@@ -39,7 +40,25 @@ body {
   transition:.3s;
 }
 
+.star-anim{
+  display:none;
+  position: absolute;
+  top: -23%;
+  pointer-events: none;
+}
+
+.star-anim object{
+  width:100%;
+  height:100%;
+}
+
+/* Anim */
+
 .hero-card:hover .hero-portrait img{
   width:100%;
   height:100%;
+}
+
+.hero-card:hover .star-anim{
+  display:block;
 }
