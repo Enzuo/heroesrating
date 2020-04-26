@@ -19,6 +19,8 @@ function displayHeroes(){
     var heroContainer = document.createElement('div')
     heroContainer.className = 'hero'
     var heroCard = createHeroCard(heroes[index])
+    heroCard.setAttribute('index', index)
+    heroCard.addEventListener('click', clickHero)
     heroContainer.appendChild(heroCard)
     heroesDiv.appendChild(heroContainer)
   }
@@ -31,7 +33,7 @@ function createHeroCard(hero){
   var heroPortrait = document.createElement('div')
   heroPortrait.className = 'hero-portrait'
   var heroPortraitImg = document.createElement('img')
-  heroPortraitImg.setAttribute('src', 'img/'+hero.name.replace(' ', '_')+'_Hero_Portrait.png')
+  heroPortraitImg.setAttribute('src', 'img/'+hero.name.replace(/ /g, '_')+'_Hero_Portrait.png')
   var heroPortraitAnim = document.createElement('div')
   heroPortraitAnim.className = 'star-anim'
   heroPortraitAnim.innerHTML = '<object type="image/svg+xml" data="svg/stars.svg"></object>'
@@ -50,6 +52,12 @@ function createHeroCard(hero){
   heroCard.appendChild(heroName)
   heroCard.appendChild(heroType)
   return heroCard;
+}
+
+function clickHero(event, b){
+  console.log('clickHero', event, b)
+  console.log(this, this.getAttribute('index'))
+  displayHeroes()
 }
 
 function uniqueRandom(length){
