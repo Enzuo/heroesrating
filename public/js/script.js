@@ -22,8 +22,14 @@ function displayHeroes(){
     heroCard.setAttribute('index', index)
     heroCard.addEventListener('click', clickHero)
     heroContainer.appendChild(heroCard)
-    heroesDiv.appendChild(heroContainer)
+    appendHeroTimeout(heroesDiv, heroContainer, i*200)
   }
+}
+
+function appendHeroTimeout(div, hero, time){
+  setTimeout(function(){
+    div.appendChild(hero)
+  }, time);
 }
 
 function createHeroCard(hero){
