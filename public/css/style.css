@@ -6,6 +6,11 @@ body {
   overflow: hidden;
 }
 
+#heroes {
+  margin:0 auto;
+  max-width:720px;
+}
+
 /* Title */
 
 #title {
@@ -33,7 +38,6 @@ body {
   position:relative;
 }
 
-
 .hero-portrait {
   width:100%;
   position:relative;
@@ -46,6 +50,7 @@ body {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  display: block;
 }
 
 .hero-name, .hero-type {
@@ -76,6 +81,31 @@ body {
 
 /* Anim */
 
+/* selected anim */
+.hero-card.selected .hero-portrait {
+  background:#fff;
+}
+
+.hero-card.unselected .hero-portrait {
+  background:#000;
+}
+
+.hero-card.selected img {
+  transition: opacity 0.4s;
+  opacity: 0
+}
+
+.hero-card.unselected img {
+  transition: opacity 0.4s;
+  opacity: 0
+}
+
+.hero-card.selected, .hero-card.unselected {
+  transition: opacity .5s;
+  opacity: 0
+}
+
+/* pop in */
 .hero-card {
   animation: pop-in .5s ease-out;
 }

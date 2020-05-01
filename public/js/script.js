@@ -22,7 +22,7 @@ function displayHeroes(){
     heroCard.setAttribute('index', index)
     heroCard.addEventListener('click', clickHero)
     heroContainer.appendChild(heroCard)
-    appendHeroTimeout(heroesDiv, heroContainer, i*200)
+    appendHeroTimeout(heroesDiv, heroContainer, i*150)
   }
 }
 
@@ -63,7 +63,18 @@ function createHeroCard(hero){
 function clickHero(event, b){
   console.log('clickHero', event, b)
   console.log(this, this.getAttribute('index'))
-  displayHeroes()
+  // displayHeroes()
+  var index = this.getAttribute('index')
+  var cards = document.getElementsByClassName('hero-card')
+  for(var i=0; i<cards.length; i++){
+    if(cards[i].getAttribute('index') !== index){
+      cards[i].className = 'hero-card unselected'
+    }
+  }
+  this.className = 'hero-card selected'
+  setTimeout(function(){
+    displayHeroes();
+  }, 500)
 }
 
 function uniqueRandom(length){
