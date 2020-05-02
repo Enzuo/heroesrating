@@ -1,16 +1,19 @@
-var heroes;
+var heroesData
+var roundTimer
+var hoverTimer
+var heroesRound
 
 function init(){
   $.getJSON('js/heroes.json', function(data) {
-    heroes = data
-    displayHeroes()
+    heroesData = data
+    pickHeroRound()
   })
 }
 
-function displayHeroes(){
-  var indexes = uniqueRandom(heroes.length)
-  console.log(indexes)
-
+function pickHeroRound(){
+  var indexes = uniqueRandom(heroesData.length)
+  heroesRound = toHeroesObject(indexes)
+  
   var heroesDiv = document.getElementById('heroes')
   heroesDiv.innerHTML = ''
 
@@ -18,12 +21,20 @@ function displayHeroes(){
     var index = indexes[i]
     var heroContainer = document.createElement('div')
     heroContainer.className = 'hero'
-    var heroCard = createHeroCard(heroes[index])
+
+    var heroCard = createHeroCard(heroesData[index])
     heroCard.setAttribute('index', index)
     heroCard.addEventListener('click', clickHero)
+    heroCard.addEventListener('mouseenter', hoverHero)
+    heroCard.addEventListener('mouseleave', hoverHeroEnd)
+
     heroContainer.appendChild(heroCard)
     appendHeroTimeout(heroesDiv, heroContainer, i*150)
   }
+
+  /* reset timers */
+  roundTimer = Date.now();
+  hoverTimer = null;
 }
 
 function appendHeroTimeout(div, hero, time){
@@ -60,11 +71,18 @@ function createHeroCard(hero){
   return heroCard;
 }
 
+function sendResult(selectedIndex){
+  heroesRound[selectedIndex].selected = true
+  roundTime = Date.now() - roundTimer 
+  $.post('/', {heroes : heroesRound, roundTime : roundTime}, null, 'json')
+}
+
+/** 
+ * Events 
+ * */
 function clickHero(event, b){
-  console.log('clickHero', event, b)
-  console.log(this, this.getAttribute('index'))
-  // displayHeroes()
   var index = this.getAttribute('index')
+  /* anim */
   var cards = document.getElementsByClassName('hero-card')
   for(var i=0; i<cards.length; i++){
     if(cards[i].getAttribute('index') !== index){
@@ -72,11 +90,35 @@ function clickHero(event, b){
     }
   }
   this.className = 'hero-card selected'
+  
+  /* result */
+  hoverHeroEnd.bind(this)()
+  sendResult(index)
+
+  /* new round */
   setTimeout(function(){
-    displayHeroes();
+    pickHeroRound();
   }, 500)
 }
 
+function hoverHero(){
+  console.log('enter')
+  hoverTimer = Date.now()
+}
+
+function hoverHeroEnd(){
+  console.log('leave')
+  if(hoverTimer){
+    var index = this.getAttribute('index')
+    heroesRound[index].hoverTimer += (Date.now() - hoverTimer) 
+    hoverTimer = null
+  }
+}
+
+
+/** 
+ * Helpers 
+ * */
 function uniqueRandom(length){
   var nb=3
   var res=[]
@@ -87,6 +129,13 @@ function uniqueRandom(length){
     }
   }
   return res
+}
+
+function toHeroesObject(arr) {
+  var rv = {};
+  for (var i = 0; i < arr.length; ++i)
+    rv[arr[i]] = { hoverTimer:0 };
+  return rv;
 }
 
 
