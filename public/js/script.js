@@ -2,8 +2,14 @@ var heroesData
 var roundTimer
 var hoverTimer
 var heroesRound
+var idUser = window.localStorage.getItem('idUser')
 
 function init(){
+  if(!idUser){
+    idUser = Date.now()
+    window.localStorage.setItem('idUser', idUser)
+  }
+
   $.getJSON('js/heroes.json', function(data) {
     heroesData = data
     pickHeroRound()
@@ -74,7 +80,12 @@ function createHeroCard(hero){
 function sendResult(selectedIndex){
   heroesRound[selectedIndex].selected = true
   roundTime = Date.now() - roundTimer 
-  $.post('/', {heroes : heroesRound, roundTime : roundTime}, null, 'json')
+  var data = {
+    heroes: heroesRound, 
+    roundTime: roundTime, 
+    idUser: idUser
+  }
+  $.post('/', JSON.stringify(data), null, 'json')
 }
 
 /** 
