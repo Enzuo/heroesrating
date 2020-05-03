@@ -78,12 +78,12 @@ function createHeroCard(hero){
 }
 
 function sendResult(selectedIndex){
-  heroesRound[selectedIndex].selected = true
+  heroesRound[selectedIndex].s = true
   roundTime = Date.now() - roundTimer 
   var data = {
-    heroes: heroesRound, 
-    roundTime: roundTime, 
-    idUser: idUser
+    h: heroesRound, 
+    rT: roundTime, 
+    u: idUser
   }
 
   var request = new XMLHttpRequest();
@@ -123,7 +123,7 @@ function hoverHero(){
 function hoverHeroEnd(){
   if(hoverTimer){
     var index = this.getAttribute('index')
-    heroesRound[index].hoverTimer += (Date.now() - hoverTimer) 
+    heroesRound[index].hT += (Date.now() - hoverTimer) 
     hoverTimer = null
   }
 }
@@ -147,7 +147,7 @@ function uniqueRandom(length){
 function toHeroesObject(arr) {
   var rv = {};
   for (var i = 0; i < arr.length; ++i)
-    rv[arr[i]] = { hoverTimer:0 };
+    rv[arr[i]] = { hT: 0 };
   return rv;
 }
 
