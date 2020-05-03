@@ -85,7 +85,11 @@ function sendResult(selectedIndex){
     roundTime: roundTime, 
     idUser: idUser
   }
-  $.post('/', JSON.stringify(data), null, 'json')
+
+  var request = new XMLHttpRequest();
+  request.open('POST', '/', true);
+  request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+  request.send(JSON.stringify(data));
 }
 
 /** 
@@ -113,12 +117,10 @@ function clickHero(event, b){
 }
 
 function hoverHero(){
-  console.log('enter')
   hoverTimer = Date.now()
 }
 
 function hoverHeroEnd(){
-  console.log('leave')
   if(hoverTimer){
     var index = this.getAttribute('index')
     heroesRound[index].hoverTimer += (Date.now() - hoverTimer) 
