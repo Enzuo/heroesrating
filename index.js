@@ -4,6 +4,7 @@ const expressip = require('express-ip');
 
 require('dotenv').config()
 const database = require('./src/database')
+const result = require('./src/result')
 
 const app = express()
 const port = 3000
@@ -56,9 +57,21 @@ app.post('/', function (req, res) {
   res.status(200).send('ok')
 })
 
+/**
+ * results
+ */
+app.get('/total', result.getTotal)
+
+
+/**
+ * 404
+ */
 app.use(function (req, res, next) {
   res.status(404).send("Sorry can't find that!")
 })
 
 
+/**
+ * start
+ */
 app.listen(port, () => console.log(`--> Heroes rating server listening at http://localhost:${port}`))
