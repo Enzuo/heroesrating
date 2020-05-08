@@ -1,8 +1,10 @@
 const { Client } = require('pg')
 var fs = require('fs');
-const client = new Client()
 
 doMigrations()
+
+var totalSql = fs.readFileSync('./src/total.sql').toString();
+
 
 async function doMigrations(){
   var sql = fs.readFileSync('./src/migration.sql').toString();
@@ -11,6 +13,7 @@ async function doMigrations(){
 } 
 
 async function pgQuery(sql, arrData){
+  const client = new Client()
   await client.connect()
   const res = await client.query(sql, arrData)
   await client.end()
@@ -25,8 +28,9 @@ function saveLog(){
 
 }
 
-function saveTotal(){
-  
+async function saveTotal(data){
+  var res = await pgQuery(totalSql, data)
+  console.log(res)
 }
 
 module.exports = {
