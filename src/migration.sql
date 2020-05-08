@@ -1,3 +1,7 @@
+--DROP TABLE "voteLog";
+--DROP TABLE "hero";
+
+
 CREATE TABLE "voteLog" (
     "idUser" BIGINT
   , "ip"     VARCHAR(15)
