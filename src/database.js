@@ -4,8 +4,9 @@ const pool = new Pool()
 
 doMigrations()
 
-var totalSql = fs.readFileSync('./src/voteTotal.sql').toString();
-var logSql = fs.readFileSync('./src/voteLog.sql').toString();
+var saveTotalSql = fs.readFileSync('./src/voteTotal.sql').toString();
+var saveLogSql = fs.readFileSync('./src/voteLog.sql').toString();
+var getTotalSql = fs.readFileSync('./src/getTotal.sql').toString();
 
 
 async function doMigrations(){
@@ -39,15 +40,21 @@ async function saveLog(data){
   }
   arr.push(data.roundTime)
   console.log(arr)
-  var res = await pgQuery(logSql, arr)
+  var res = await pgQuery(saveLogSql, arr)
   console.log(res)
 }
 
 async function saveTotal(data){
-  var res = await pgQuery(totalSql, data)
+  var res = await pgQuery(saveTotalSql, data)
+}
+
+async function getTotal(){
+  var res = await pgQuery(getTotalSql)
+  return res.rows
 }
 
 module.exports = {
   saveLog,
-  saveTotal
+  saveTotal,
+  getTotal,
 }
