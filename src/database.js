@@ -1,5 +1,6 @@
-const { Client } = require('pg')
+const { Pool } = require('pg')
 var fs = require('fs');
+const pool = new Pool()
 
 doMigrations()
 
@@ -8,16 +9,17 @@ var logSql = fs.readFileSync('./src/voteLog.sql').toString();
 
 
 async function doMigrations(){
-  var sql = fs.readFileSync('./src/migration.sql').toString();
-  var res = await pgQuery(sql)
-  console.log(res)
+  try {
+    var sql = fs.readFileSync('./src/migration.sql').toString();
+    var res = await pgQuery(sql)
+  }
+  catch(e){
+    console.log('--> Migration error', e.message)
+  }
 } 
 
 async function pgQuery(sql, arrData){
-  const client = new Client()
-  await client.connect()
-  const res = await client.query(sql, arrData)
-  await client.end()
+  const res = await pool.query(sql, arrData)
   return res
 }
 
