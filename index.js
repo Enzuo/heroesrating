@@ -21,6 +21,7 @@ app.post('/', function (req, res) {
   console.log(heroes, roundTime, idUser, ipUser)
 
   // prevent combo/system abuse
+  // user can't vote more than 30 times to avoid one having too much weight
 
   // save log
   database.saveLog({heroes, roundTime, idUser, ipUser})

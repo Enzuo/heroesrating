@@ -1,5 +1,5 @@
 CREATE TABLE "voteLog" (
-    "idUser" INTEGER
+    "idUser" BIGINT
   , "ip"     VARCHAR(15)
   , "hero1"  SMALLINT
   , "hT1"    INTEGER
