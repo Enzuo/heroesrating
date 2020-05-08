@@ -38,6 +38,9 @@ app.post('/', function (req, res) {
     }
     else {
       score = -2
+      if(roundTime > 3000 ){
+        score += 1
+      }
       if(value.hT > 2000 ){
         score += 1
       }
