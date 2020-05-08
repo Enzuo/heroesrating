@@ -2,6 +2,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const expressip = require('express-ip');
 
+require('dotenv').config()
+const database = require('./src/database')
+
 const app = express()
 const port = 3000
 
@@ -20,6 +23,7 @@ app.post('/', function (req, res) {
   // prevent combo/system abuse
 
   // save log
+  database.saveLog({heroes, roundTime, idUser, ipUser})
 
   // calculate added score
   var heroesArr = []
@@ -43,6 +47,7 @@ app.post('/', function (req, res) {
   console.log(heroesArr)
 
   // save total
+  database.saveTotal(heroesArr)
 
   res.status(200).send('ok')
 })

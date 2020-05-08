@@ -1,4 +1,4 @@
-CREATE TABLE "voteLog" 
+CREATE TABLE "voteLog" (
     "idUser" INTEGER
   , "ip"     VARCHAR(15)
   , "hero1"  SMALLINT
@@ -14,7 +14,7 @@ CREATE TABLE "voteLog"
   , "date"   DATE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE "hero"
+CREATE TABLE "hero" (
     "idHero" SERIAL PRIMARY KEY
   , "score"  INTEGER
 );
