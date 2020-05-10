@@ -1,5 +1,18 @@
 const database = require('../database')
 
+/**
+ * body : {
+ *  h:{
+ *    87:{   // idHero 
+ *      hT,  // hover Time
+ *      s,   //selected
+ *    },
+ *  },
+ *  rT: 1000,      // round Time
+ *  u: 1523023200, // idUser
+ * }
+ */
+
 module.exports = function (req, res) {
   var heroesRound = req.body
   var heroes = heroesRound.h
