@@ -1,5 +1,5 @@
-const database = require('./database')
-const heroes = require('../public/js/heroes.json')
+const database = require('../database')
+const heroes = require('../../public/js/heroes.json')
 
 
 async function getTotal(req, res) {

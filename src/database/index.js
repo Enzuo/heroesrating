@@ -4,14 +4,14 @@ const pool = new Pool()
 
 doMigrations()
 
-var saveTotalSql = fs.readFileSync('./src/voteTotal.sql').toString();
-var saveLogSql = fs.readFileSync('./src/voteLog.sql').toString();
-var getTotalSql = fs.readFileSync('./src/getTotal.sql').toString();
+var saveTotalSql = fs.readFileSync('./src/database/voteTotal.sql').toString();
+var saveLogSql = fs.readFileSync('./src/database/voteLog.sql').toString();
+var getTotalSql = fs.readFileSync('./src/database/getTotal.sql').toString();
 
 
 async function doMigrations(){
   try {
-    var sql = fs.readFileSync('./src/migration.sql').toString();
+    var sql = fs.readFileSync('./src/database/migration.sql').toString();
     var res = await pgQuery(sql)
   }
   catch(e){
